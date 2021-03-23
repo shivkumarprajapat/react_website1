@@ -2,7 +2,6 @@
   "name": "app-landing-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://shivkumarprajapat.github.io/app_website",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@react-icons/all-files": "^4.1.0",
@@ -24,8 +23,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
