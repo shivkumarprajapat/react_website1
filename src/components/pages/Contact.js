@@ -4,6 +4,7 @@ import { FaEnvelope, FaLocationArrow, FaPhone } from "react-icons/fa";
 import emailjs from "emailjs-com";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 function Contact() {
     function sendEmail(e) {
         e.preventDefault();
@@ -107,7 +108,7 @@ function Contact() {
 
                                     <Row>
                                         <Col lg={12}>
-                                            <button type="submit" className="btn-2" onClick={notify}>Send Message</button>
+                                            <button type="submit" className="btn-2" onClick={notify}><Link to="/contact" className="nav_link">Send Message</Link> </button>
 
                                             <ToastContainer />
                                         </Col>
