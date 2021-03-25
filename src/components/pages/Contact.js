@@ -1,23 +1,32 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { FaEnvelope, FaLocationArrow, FaPhone } from "react-icons/fa";
-import emailjs from "emailjs-com";
-// import { ToastContainer, toast } from 'react-toastify';
-//   import 'react-toastify/dist/ReactToastify.css';
+// import emailjs from "emailjs-com";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Contact() {
-    function sendEmail(e) {
-        e.preventDefault();
+    // function sendEmail(e) {
+    //     e.preventDefault();
 
-        emailjs.sendForm('gmail', 'template_brgvmzj', e.target, 'user_T0XDPDZnvTEydAcnQ382y')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
-        e.target.reset();
-        
-        // const notify = () => toast("Wow so easy!");
-
+    //     emailjs.sendForm('gmail', 'template_brgvmzj', e.target, 'user_T0XDPDZnvTEydAcnQ382y')
+    //         .then((result) => {
+    //             console.log(result.text);
+    //         }, (error) => {
+    //             console.log(error.text);
+    //         });
+    //     e.target.reset();
+    // }
+    const notify = () => {
+        toast.success("Email Successfully Sent 💌 " , {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        toast.preventDefault();
     }
     return (
         <>
@@ -101,10 +110,9 @@ function Contact() {
 
                                     <Row>
                                         <Col lg={12}>
-                                            <button type="submit" className="btn-2">Send Message</button>
+                                            <button type="submit" className="btn-2" onClick={notify}>Send Message</button>
 
-                                            {/* <button onClick={notify}>Notify!</button> */}
-                                            {/* <ToastContainer /> */}
+                                            <ToastContainer />
                                         </Col>
                                     </Row>
                                 </form>
