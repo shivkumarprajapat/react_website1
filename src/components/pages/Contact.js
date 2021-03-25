@@ -1,32 +1,31 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { FaEnvelope, FaLocationArrow, FaPhone } from "react-icons/fa";
-// import emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function Contact() {
-    // function sendEmail(e) {
-    //     e.preventDefault();
+    function sendEmail(e) {
+        e.preventDefault();
 
-    //     emailjs.sendForm('gmail', 'template_brgvmzj', e.target, 'user_T0XDPDZnvTEydAcnQ382y')
-    //         .then((result) => {
-    //             console.log(result.text);
-    //         }, (error) => {
-    //             console.log(error.text);
-    //         });
-    //     e.target.reset();
-    // }
+        emailjs.sendForm('gmail', 'template_qk0nula', e.target, 'user_T0XDPDZnvTEydAcnQ382y')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+        e.target.reset();
+    }
     const notify = () => {
-        toast.success("Email Successfully Sent 💌 " , {
+        toast.success("Email Successfully Sent 💌 ", {
             position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
+            autoClose: 10000,
+            hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
         });
-        toast.preventDefault();
     }
     return (
         <>
@@ -68,21 +67,19 @@ function Contact() {
                         </Col>
                         <Col lg={8} md={7}>
                             <div className="contact-form">
-                                <form>
-                                    {/* onSubmit={sendEmail} */}
-                                    <Row>
-                                        <Col lg={6}>
-                                            <div className="form-group">
-                                                <input type="text" placeholder="your Name" name="name" className="form-control" />
-                                            </div>
-                                        </Col>
+                                <form onSubmit={sendEmail}>                                    <Row>
+                                    <Col lg={6}>
+                                        <div className="form-group">
+                                            <input type="text" placeholder="your Name" name="name" className="form-control" />
+                                        </div>
+                                    </Col>
 
-                                        <Col lg={6}>
-                                            <div className="form-group">
-                                                <input type="text" placeholder="your Email" name="email" className="form-control" />
-                                            </div>
-                                        </Col>
-                                    </Row>
+                                    <Col lg={6}>
+                                        <div className="form-group">
+                                            <input type="text" placeholder="your Email" name="email" className="form-control" />
+                                        </div>
+                                    </Col>
+                                </Row>
 
                                     <Row>
                                         <Col lg={12}>
